@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "github.com/RinatNamazov/fbs-golang-test-task/internal/fibonacci/delivery/grpc/proto";
+
+service FibonacciService {
+    rpc GetFibonacciSequence(GetFibonacciSequenceRequest) returns (GetFibonacciSequenceResponse) {}
+}
+
+message GetFibonacciSequenceRequest {
+    uint32 from = 1;
+    uint32 to = 2;
+}
+
+message GetFibonacciSequenceResponse {
+    repeated uint64 sequence = 1;
+}
